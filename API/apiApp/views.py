@@ -15,10 +15,10 @@ def index(request: Request):
     return Response(data)
 
 
-@api_view(['POST'])
+@api_view(["POST"])
 def max_min(request: Request):
-    max = request.data.get("max_num", 10)
-    min = request.data.get("min_num", -1)
+    max = request.data.get("max", None)
+    min = request.data.get("min", None)
     if min < 0:
         data = {"msg": "Not Allowed. Please provide a min that is bigger than 0"}
         return Response(data, status=status.HTTP_400_BAD_REQUEST)
