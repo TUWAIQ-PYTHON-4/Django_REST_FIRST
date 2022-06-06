@@ -4,13 +4,13 @@ from rest_framework.decorators import api_view
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import status
-from datetime import date
+from datetime import date as my_date
 from random import randint
 
 @api_view(['GET'])
 def date(request : Request):
     data = {
-        "date" : f"Today is {date.today()}"
+        "date" : f"Today is {my_date.today()}"
     }
 
     return Response(data)
